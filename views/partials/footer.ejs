@@ -1,0 +1,25 @@
+</main>
+<footer>
+    <p>&copy; 2025 Blog App. All rights reserved.</p>
+</footer>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="/scripts/main.js"></script>
+<script>
+    // Auto-expand textarea as user types
+    document.addEventListener('DOMContentLoaded', function() {
+        const textarea = document.querySelector('textarea');
+        if (textarea) {
+            // Initial height
+            textarea.style.height = 'auto';
+            textarea.style.height = (textarea.scrollHeight) + 'px';
+            
+            // Auto-expand on input
+            textarea.addEventListener('input', function() {
+                this.style.height = 'auto';
+                this.style.height = (this.scrollHeight) + 'px';
+            });
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<%- include('partials/header') %>
+<h1>Blog App</h1>
+
+<form action="/add" method="POST">
+    <textarea name="blogPost" placeholder="Add a new blog post" required></textarea>
+    <button type="submit">Add</button>
+</form>
+
+
+<% if (locals.blogPosts.length>0){ %>
+<h2> your blog posts</h2>
+<ul>
+    <% for(let i = 0; i < locals.blogPosts.length; i++) {%>
+    <li><div><%= locals.blogPosts[i] %></div><a href="/delete/<%= i %>">Delete</a> <a href="/edit/<%= i %>">Edit</a></li>
+    <% } %>
+</ul>
+<% } else { %>
+<p>No blog posts found</p>
+<% } %>
+
+
+<%- include('partials/footer') %>
